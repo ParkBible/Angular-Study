@@ -4,18 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ComponentOverviewComponent } from './component-overview/component-overview.component';
 import {RouterModule} from "@angular/router";
-import {OnChangesComponent} from './on-changes/on-changes.component';
+import { ShadowDomComponent } from './shadow-dom/shadow-dom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentOverviewComponent,
-    OnChangesComponent,
+    ShadowDomComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: 'onchange', component: OnChangesComponent },
     ])
   ],
   providers: [],
