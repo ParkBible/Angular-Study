@@ -1,0 +1,20 @@
+<p>즐겨찾기 검색결과</p>
+
+<div *ngIf="bookmarkResult">
+  <li *ngFor="let entity of bookmarkResult.pageList">
+    {{entity.bookmarkName}} /
+    {{entity.placeName}} /
+    {{entity.address}} /
+    {{entity.x}} /
+    {{entity.y}}
+    <input type="button" value="수정" (click)="onSelect(entity)">
+    <input type="button" value="삭제" (click)="deleteBookmark(entity.no)">
+    <div *ngIf="selectedBookmark===entity">
+      <input placeholder="새로운 이름" [(ngModel)]="modifiedBookmarkName">
+      <input type="button" value="제출" (click)="modifyBookmarkName(entity)">
+    </div>
+  </li>
+  <input type="button" value="<" (click)="getPrePageBookmark(bookmarkResult.presentPage)">
+  {{bookmarkResult.presentPage+1}} / {{bookmarkResult.totalPage}}
+  <input type="button" value=">" (click)="getNextPageBookmark(bookmarkResult.presentPage)">
+</div>

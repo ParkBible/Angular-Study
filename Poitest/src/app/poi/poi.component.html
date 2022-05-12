@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>POI 검색</p>
+<input type="text" [(ngModel)]="inputKeyword">
+<p>
+<input type="button" value="검색" (click)="getData()">
+</p>
+
+<app-poi-result [poiResult]="poiConfig"></app-poi-result>
+</body>
+</html>

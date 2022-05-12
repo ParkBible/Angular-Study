@@ -1,0 +1,20 @@
+<p>POI 검색결과</p>
+
+<div *ngIf="poiResult">
+  <li *ngFor="let poi of poiResult">
+    {{poi.place_name}} /
+    {{poi.address_name}} /
+    {{poi.x}} /
+    {{poi.y}}
+    <input type="button" value="즐겨찾기 추가" (click)="onSelect(poi)">
+    <div *ngIf="selectedPoi===poi">
+      <input placeholder="즐겨찾기 이름" [(ngModel)]="bookmarkName">
+      <input type="button" value="등록" (click)="addBookmark(poi.place_name,
+                                                            poi.address_name,
+                                                            poi.x,
+                                                            poi.y)">
+    </div>
+  </li>
+
+
+</div>

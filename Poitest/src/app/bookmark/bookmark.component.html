@@ -1,0 +1,9 @@
+<p>즐겨찾기 검색</p>
+이름 <input type="text" [(ngModel)]="bookmarkName">
+장소명 <input type="text" [(ngModel)]="placeName">
+주소 <input type="text" [(ngModel)]="address">
+<p>
+<input type="button" value="검색" (click)="getBookmark(0)">
+</p>
+
+<app-bookmark-result [bookmarkResult]="bookmarkConfig"></app-bookmark-result>
